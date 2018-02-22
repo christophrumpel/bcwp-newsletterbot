@@ -51,8 +51,10 @@ class SendOutNewsletter extends Command
 
         $users->each(function ($user) use ($botman, &$notifiedUserCount){
             try {
-                $botman->say('Hi, here is an update:', $user->fb_id, FacebookDriver::class);
-                $botman->say('Christoph has just finished the first chapter! 🎉 It will be available soon. Checkout your inbox for the link.', $user->fb_id, FacebookDriver::class);
+                $botman->say('Hi, here are the latest news', $user->fb_id, FacebookDriver::class);
+                $botman->say('1. Chatbots are here to stay', $user->fb_id, FacebookDriver::class);
+                $botman->say('2. Self-service is the new thing', $user->fb_id, FacebookDriver::class);
+                $botman->say('3. in 2020 20% of companies will have a chatbo!', $user->fb_id, FacebookDriver::class);
                 $notifiedUserCount++;
             } catch (\Exception $e) {
                 $this->info('FAIL sending message to '.$user->fb_id);
