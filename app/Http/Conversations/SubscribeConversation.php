@@ -55,7 +55,7 @@ class SubscribeConversation extends Conversation
         $this->ask($question, function (Answer $answer) {
             if ($answer->getValue() === 'yes') {
                 User::subscribe($answer->getMessage()->getSender());
-                $this->bot->reply('Wuhu, great to have you on board! 🎉');
+                $this->bot->reply('Woohoo, great to have you on board! 🎉');
                 $this->bot->typesAndWaits(.5);
                 $this->bot->reply('I will message you when there is something new to tell ✌️');
                 $this->bot->typesAndWaits(.5);
@@ -66,7 +66,7 @@ class SubscribeConversation extends Conversation
             }
 
             $this->bot->typesAndWaits(1);
-            $this->bot->reply("Christoph also likes to blog a lot. Make sure to checkout his site for more chatbot stuff: \n ✨ https://christoph-rumpel.com/ ✨ ");
+            $this->bot->reply("Christoph also likes to blog a lot. Make sure to check out his site for more chatbot stuff: \n ✨ https://christoph-rumpel.com/ ✨ ");
             $this->bot->typesAndWaits(1);
             $this->bot->reply('See you! 👋');
         });
