@@ -31,19 +31,14 @@ class User extends Authenticatable
      */
     public static function createFromIncomingMessage(\BotMan\Drivers\Facebook\Extensions\User $user)
     {
-        $givenUser = User::where('fb_id', $user->getId())
-            ->first();
-
-        if (! $givenUser) {
-            User::updateOrCreate([
-                'fb_id' => $user->getId(),
-                'first_name' => $user->getFirstName(),
-                'last_name' => $user->getLastName(),
-                'profile_pic' => $user->getProfilePic(),
-                'locale' => $user->getLocale(),
-                'gender' => $user->getGender(),
-            ]);
-        }
+        User::updateOrCreate(['fb_id' => $user->getId()], [
+            'fb_id' => $user->getId(),
+            'first_name' => $user->getFirstName(),
+            'last_name' => $user->getLastName(),
+            'profile_pic' => $user->getProfilePic(),
+            'locale' => $user->getLocale(),
+            'gender' => $user->getGender(),
+        ]);
     }
 
     /**
