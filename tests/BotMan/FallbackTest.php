@@ -2,16 +2,13 @@
 
 namespace Tests\BotMan;
 
-use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
-use BotMan\Drivers\Facebook\Extensions\ElementButton;
-use Illuminate\Foundation\Inspiring;
 use Tests\TestCase;
+use BotMan\Drivers\Facebook\Extensions\ElementButton;
+use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
 
 class FallbackTest extends TestCase
 {
     /**
-     * A basic test example.
-     *
      * @return void
      * @test
      */
