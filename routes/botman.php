@@ -1,9 +1,7 @@
 <?php
-use App\Http\Controllers\BotManController;
-use App\Http\Conversations\SubscribeConversation;
-use App\Http\Middleware\SaveUserMiddleware;
 use BotMan\BotMan\BotMan;
-use BotMan\BotMan\Messages\Outgoing\Question;
+use App\Http\Middleware\SaveUserMiddleware;
+use App\Http\Conversations\SubscribeConversation;
 use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
 use BotMan\Drivers\Facebook\Extensions\ElementButton;
 
