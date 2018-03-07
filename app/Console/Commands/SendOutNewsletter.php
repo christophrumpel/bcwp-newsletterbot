@@ -44,7 +44,6 @@ class SendOutNewsletter extends Command
 
     /**
      * Execute the console command.
-     *
      */
     public function handle()
     {
@@ -59,10 +58,11 @@ class SendOutNewsletter extends Command
 
         $subscribers->each(function ($user) use ($botman, &$notifiedUserCount) {
             try {
-                collect($this->getMessages($user))->each(function($message) use ($botman, $user) {
-
-                   $botman->say($message, $user->fb_id, FacebookDriver::class);
+                collect($this->getMessages($user))->each(function ($message) use ($botman, $user, &$notifiedUserCount) {
+                    $botman->say($message, $user->fb_id, FacebookDriver::class);
                 });
+
+                $notifiedUserCount++;
             } catch (\Exception $e) {
                 $this->info('FAIL sending message to '.$user->fb_id);
                 $this->info($e->getCode().': '.$e->getMessage());
@@ -92,6 +92,7 @@ class SendOutNewsletter extends Command
 
     /**
      * List all messages
+     *
      * @param User $user
      * @return array
      */
@@ -103,7 +104,7 @@ class SendOutNewsletter extends Command
             $this->getImageTemplate(),
             'It seems that the free sample chapter has been updated as well. You can download it here: https://goo.gl/u3wQNW',
             'Additionally, Christoph also wanted you to check out these new articles. That\'s it for today. See you next time again ✌️',
-            $this->getArticlesTemplate()
+            $this->getArticlesTemplate(),
         ];
     }
 
