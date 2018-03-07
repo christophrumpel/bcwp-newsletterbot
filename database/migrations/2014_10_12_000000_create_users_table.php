@@ -22,7 +22,6 @@ class CreateUsersTable extends Migration
             $table->string('locale', 8)->nullable();
             $table->string('gender')->nullable();
             $table->boolean('subscribed')->default(false);
-            $table->boolean('admin')->default(false);
             $table->timestamps();
         });
     }
