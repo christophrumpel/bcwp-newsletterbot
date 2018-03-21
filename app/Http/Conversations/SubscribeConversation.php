@@ -62,7 +62,7 @@ class SubscribeConversation extends Conversation
             } else {
                 User::unsubscribe($answer->getMessage()->getSender());
                 $this->bot->typesAndWaits(1);
-                $this->bot->reply('Ok no problem. If change your mind, just type "subscribe".');
+                $this->bot->reply('Ok no problem. If you change your mind, just type "subscribe".');
             }
 
             $this->bot->typesAndWaits(1);

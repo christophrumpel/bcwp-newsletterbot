@@ -46,7 +46,7 @@ class SubscribeConversationTest extends TestCase
             ->assertReply('If you like, I can keep you updated about it here on Facebook Messenger.')
             ->assertQuestion('Are you in?')
             ->receives('no')
-            ->assertReply('Ok no problem. If change your mind, just type "subscribe".')
+            ->assertReply('Ok no problem. If you change your mind, just type "subscribe".')
             ->assertReply("Christoph also likes to blog a lot. Make sure to check out his site for more chatbot stuff: \n ✨ https://christoph-rumpel.com/ ✨ ")
             ->assertReply('See you! 👋');
     }
