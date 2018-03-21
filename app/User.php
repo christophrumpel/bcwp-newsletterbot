@@ -72,4 +72,22 @@ class User extends Authenticatable
             $user->save();
         }
     }
+
+    /**
+     * Get subscribers or admin if it is for debugging
+     *
+     * @param null $debug
+     * @return mixed
+     */
+    public static function getSubscribers($debug = null)
+    {
+        if ($debug) {
+            return User::where('admin', true)
+                ->get();
+        }
+
+        return User::where('subscribed', true)
+            ->get();
+    }
+
 }
