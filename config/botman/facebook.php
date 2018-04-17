@@ -90,11 +90,18 @@ return [
                     'webview_height_ratio' => 'full',
                 ],
                 [
-                    'type' => 'web_url',
-                    'title' => '👉 Christoph\'s Blog',
-                    'url' => 'https://christoph-rumpel.com',
-                    'webview_height_ratio' => 'full',
+                    'type' => 'nested',
+                    'title' => '🙈 Privacy',
+                    'call_to_actions' => [
+                        [
+                            'type' => 'web_url',
+                            'title' => 'Privacy Policy',
+                            'url' => 'https://christoph-rumpel.com/policy-newsletterchatbot',
+                            'webview_height_ratio' => 'full',
+                        ],
+                    ]
                 ],
+
             ],
         ],
     ],
