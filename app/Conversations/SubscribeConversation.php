@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Conversations;
+namespace App\Conversations;
 
 use App\User;
 use BotMan\BotMan\Messages\Incoming\Answer;
@@ -41,8 +41,10 @@ class SubscribeConversation extends Conversation
         $this->bot->typesAndWaits(.5);
         $this->bot->reply('I help Christoph to spread some news about his book development. 📘');
         $this->bot->typesAndWaits(1);
-        $this->bot->reply('If you like, I can keep you updated about it here on Facebook Messenger.');
+        $this->bot->reply("If you like, I can keep you updated about it here on Facebook Messenger. (1-2 times a month)");
         $this->bot->typesAndWaits(1);
+        $this->bot->reply("In order to work I will store your name and Facebook ID. Please make sure to read the privacy policy for more information: \nhttps://christoph-rumpel.com/policy-newsletterchatbot");
+        $this->bot->typesAndWaits(2);
 
         $question = Question::create('Are you in?')
             ->addButtons([
@@ -54,6 +56,7 @@ class SubscribeConversation extends Conversation
 
         $this->ask($question, function (Answer $answer) {
             if ($answer->getValue() === 'yes') {
+                User::createFromIncomingMessage($this->bot->getUser());
                 User::subscribe($answer->getMessage()->getSender());
                 $this->bot->reply('Woohoo, great to have you on board! 🎉');
                 $this->bot->typesAndWaits(.5);
@@ -62,7 +65,7 @@ class SubscribeConversation extends Conversation
             } else {
                 User::unsubscribe($answer->getMessage()->getSender());
                 $this->bot->typesAndWaits(1);
-                $this->bot->reply('Ok no problem. If you change your mind, just type "subscribe".');
+                $this->bot->reply('Ok no problem. If you change your mind, just type "subscribe" or use the menu.');
             }
 
             $this->bot->typesAndWaits(1);

@@ -3,12 +3,11 @@
 namespace Tests\BotMan;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class SubscribeConversationTest extends TestCase
 {
-
-    use DatabaseMigrations;
+    use DatabaseTransactions;
 
     /**
      * @test
@@ -27,7 +26,8 @@ class SubscribeConversationTest extends TestCase
     {
         $this->bot->receives('subscribe')
             ->assertReply('I help Christoph to spread some news about his book development. 📘')
-            ->assertReply('If you like, I can keep you updated about it here on Facebook Messenger.')
+            ->assertReply('If you like, I can keep you updated about it here on Facebook Messenger. (1-2 times a month)')
+            ->assertReply("In order to work I will store your name and Facebook ID. Please make sure to read the privacy policy for more information: \nhttps://christoph-rumpel.com/policy-newsletterchatbot")
             ->assertQuestion('Are you in?')
             ->receives('yes')
             ->assertReply('Woohoo, great to have you on board! 🎉')
@@ -43,10 +43,11 @@ class SubscribeConversationTest extends TestCase
     {
         $this->bot->receives('subscribe')
             ->assertReply('I help Christoph to spread some news about his book development. 📘')
-            ->assertReply('If you like, I can keep you updated about it here on Facebook Messenger.')
+            ->assertReply("If you like, I can keep you updated about it here on Facebook Messenger. (1-2 times a month)")
+            ->assertReply("In order to work I will store your name and Facebook ID. Please make sure to read the privacy policy for more information: \nhttps://christoph-rumpel.com/policy-newsletterchatbot")
             ->assertQuestion('Are you in?')
             ->receives('no')
-            ->assertReply('Ok no problem. If you change your mind, just type "subscribe".')
+            ->assertReply('Ok no problem. If you change your mind, just type "subscribe" or use the menu.')
             ->assertReply("Christoph also likes to blog a lot. Make sure to check out his site for more chatbot stuff: \n ✨ https://christoph-rumpel.com/ ✨ ")
             ->assertReply('See you! 👋');
     }

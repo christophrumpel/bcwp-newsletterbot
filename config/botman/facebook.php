@@ -99,6 +99,16 @@ return [
                             'url' => 'https://christoph-rumpel.com/policy-newsletterchatbot',
                             'webview_height_ratio' => 'full',
                         ],
+                        [
+                            'type' => 'postback',
+                            'title' => 'Show your stored data',
+                            'payload' => 'SHOW_USER_DATA',
+                        ],
+                        [
+                            'type' => 'postback',
+                            'title' => 'Delete your stored data',
+                            'payload' => 'DELETE_USER_DATA',
+                        ],
                     ]
                 ],
 

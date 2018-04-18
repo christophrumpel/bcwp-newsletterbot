@@ -27,9 +27,9 @@ class User extends Authenticatable
     /**
      * Create or update user
      *
-     * @param \BotMan\Drivers\Facebook\Extensions\User $user
+     * @param $user
      */
-    public static function createFromIncomingMessage(\BotMan\Drivers\Facebook\Extensions\User $user)
+    public static function createFromIncomingMessage($user)
     {
         User::updateOrCreate(['fb_id' => $user->getId()], [
             'fb_id' => $user->getId(),
