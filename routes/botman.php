@@ -2,15 +2,11 @@
 
 use BotMan\BotMan\BotMan;
 use App\Conversations\FallbackConversation;
-use App\Http\Middleware\SaveUserMiddleware;
 use App\Conversations\SubscribeConversation;
 use App\Conversations\PrivacyPolicyInfoConversation;
 use App\Conversations\PrivacyPolicyDeleteDataConversation;
 
 $botman = resolve('botman');
-
-//$middleware = new SaveUserMiddleware();
-//$botman->middleware->heard($middleware);
 
 $botman->hears('GET_STARTED_NOW|subscribe', function (BotMan $bot) {
     $userFromStartButton = $bot->getMessage()->getText() === 'GET_STARTED_NOW' ? true : false;
