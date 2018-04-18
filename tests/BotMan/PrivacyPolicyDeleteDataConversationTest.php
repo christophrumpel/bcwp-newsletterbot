@@ -18,7 +18,7 @@ class PrivacyPolicyDeleteDataConversationTest extends TestCase
      */
     public function it_asks_about_deletion_but_not_user_given()
     {
-        $question = Question::create('Are you sure you want to delete your data? As a result, you will no longer receive news on the book.')
+        $question = Question::create('Are you sure you want to delete your data? As a result, I will no longer be able to send you updates on the book.')
             ->addButtons([
                 Button::create('Yes, I am sure!')
                     ->value('delete'),
@@ -37,7 +37,7 @@ class PrivacyPolicyDeleteDataConversationTest extends TestCase
      */
     public function it_asks_about_deletion_and_shows_positive_answer()
     {
-        $question = Question::create('Are you sure you want to delete your data? As a result, you will no longer receive news on the book.')
+        $question = Question::create('Are you sure you want to delete your data? As a result, I will no longer be able to send you updates on the book.')
             ->addButtons([
                 Button::create('Yes, I am sure!')
                     ->value('delete'),
@@ -58,7 +58,7 @@ class PrivacyPolicyDeleteDataConversationTest extends TestCase
      */
     public function it_asks_about_deletion_and_shows_negative_answer()
     {
-        $question = Question::create('Are you sure you want to delete your data? As a result, you will no longer receive news on the book.')
+        $question = Question::create('Are you sure you want to delete your data? As a result, I will no longer be able to send you updates on the book.')
             ->addButtons([
                 Button::create('Yes, I am sure!')
                     ->value('delete'),

@@ -58,10 +58,10 @@ class SubscribeConversation extends Conversation
             if ($answer->getValue() === 'yes') {
                 User::createFromIncomingMessage($this->bot->getUser());
                 User::subscribe($answer->getMessage()->getSender());
+                $this->bot->typesAndWaits(1);
                 $this->bot->reply('Woohoo, great to have you on board! 🎉');
-                $this->bot->typesAndWaits(.5);
+                $this->bot->typesAndWaits(1);
                 $this->bot->reply('I will message you when there is something new to tell ✌️');
-                $this->bot->typesAndWaits(.5);
             } else {
                 User::unsubscribe($answer->getMessage()->getSender());
                 $this->bot->typesAndWaits(1);
@@ -74,5 +74,4 @@ class SubscribeConversation extends Conversation
             $this->bot->reply('See you! 👋');
         });
     }
-
 }

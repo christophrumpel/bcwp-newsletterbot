@@ -22,7 +22,7 @@ class PrivacyPolicyDeleteDataConversation extends Conversation
      */
     private function askAboutDeletion()
     {
-        $question = Question::create('Are you sure you want to delete your data? As a result, you will no longer receive news on the book.')
+        $question = Question::create('Are you sure you want to delete your data? As a result, I will no longer be able to send you updates on the book.')
             ->
             addButtons([
                 Button::create('Yes, I am sure!')
