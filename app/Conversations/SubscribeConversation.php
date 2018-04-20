@@ -43,7 +43,7 @@ class SubscribeConversation extends Conversation
         $this->bot->typesAndWaits(1);
         $this->bot->reply("If you like, I can keep you updated about it here on Facebook Messenger. (1-2 times a month)");
         $this->bot->typesAndWaits(1);
-        $this->bot->reply("In order to work I will store your name and Facebook ID. Please make sure to read the privacy policy for more information: \nhttps://christoph-rumpel.com/policy-newsletterchatbot");
+        $this->bot->reply("In order to work I will store your name and Facebook ID. Please make sure to read the short and easy to read privacy policy for more information(1-2min): \nhttps://christoph-rumpel.com/policy-newsletterchatbot");
         $this->bot->typesAndWaits(2);
 
         $question = Question::create('Are you in?')
