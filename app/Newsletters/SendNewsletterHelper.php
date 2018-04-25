@@ -68,6 +68,19 @@ class SendNewsletterHelper
     }
 
     /**
+     * @param array $article
+     * @return GenericTemplate
+     */
+    public function getSingleArticleTemplate(array $article)
+    {
+        return GenericTemplate::create()
+            ->addElement(Element::create($article['title'])
+                ->image($article['imageUrl'])
+                ->addButton(ElementButton::create('Visit')
+                    ->url($article['url'])));
+    }
+
+    /**
      * @param array $messages
      * @param $user
      * @param $command
