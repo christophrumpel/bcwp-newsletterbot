@@ -3,6 +3,8 @@
 namespace App\Newsletters;
 
 use BotMan\BotMan\BotMan;
+use BotMan\BotMan\Messages\Attachments\Attachment;
+use BotMan\Drivers\Facebook\Extensions\MediaTemplate;
 use Illuminate\Support\Carbon;
 use BotMan\Drivers\Facebook\FacebookDriver;
 use BotMan\BotMan\Messages\Attachments\Image;
