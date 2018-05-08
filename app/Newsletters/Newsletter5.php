@@ -53,6 +53,7 @@ class Newsletter5 implements Newsletter
             'While he was waiting for some waves, he realized that you have been waiting for new book content much too long as well!',
             'Today you can grab the new sample chapter called *Build Your First Chatbot in Plain PHP*!',
             "In this chapter, Christoph explains to you how messenger chatbots work, and how you can build these applications in just plain PHP. It will give you a better understanding of essential chatbot and messenger concepts.\n ✨ *Download it here* 👉 https://goo.gl/ZU9Cfr ✨",
+            'Read you soon, bye 👋️',
         ];
     }
 
