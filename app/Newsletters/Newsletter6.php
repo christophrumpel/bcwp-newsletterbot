@@ -47,7 +47,7 @@ class Newsletter6 implements Newsletter
     public function getMessages(User $user)
     {
         return [
-            'Hello!',
+            "Hello {$user->first_name}!",
             'This will be the last time you hear from me before the release of the book on the 12th of July. It means only 11 more nights :-) 😱',
             'Today I can share some big news with you. Christoph already told you about the content of the book, but he never told you what you are going to build in the final chapter. Today I can tell you:',
             '*You are going to develop the Laracon EU chatbot together with Christoph!* ❤️',
