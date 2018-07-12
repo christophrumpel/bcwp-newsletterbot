@@ -49,12 +49,12 @@ class Newsletter7 implements Newsletter
         return [
             "Hey {$user->first_name} 👋",
             '*Today is THE DAY! 🎉 🎈*',
-            'I just released my book *Build Chatbots with PHP*, and it is now available. With over 200 pages it covers everything you need to know about building chatbots in PHP.',
-            'Here is what my friend *Marcel Pociot* says about it:',
+            'Christoph just released his book *Build Chatbots with PHP*, and it is now available. With over 200 pages it covers everything you need to know about building chatbots in PHP.',
+            'Here is what his friend *Marcel Pociot* says about it:',
             '_"Christoph\'s Chatbot book is a great way to enter the world of chatbots with PHP. It covers everything to get your first chatbot up and running and will leave you inspired to build your own."_',
-            'Next to the book, I also provide a little video course showing how to built the Laracon EU chatbot 👍',
-            'I also want to say thank *YOU* for your patience and support.',
-            'As a little gift, I got this 15% discount coupon code for you:',
+            'Next to the book, Christoph also provides a little video course showing how to built the Laracon EU chatbot 👍',
+            'He also wanted to say thank *YOU* for your patience and support.',
+            'As a little gift, he got this 15% discount coupon code for you:',
             '_IT-WAS-A-GREAT-IDEA-TO-SIGN-UP-FOR-THE-NEWSLETTER_',
             $this->newsletterHelper->getSingleArticleTemplate($this->getArticleData()),
         ];
